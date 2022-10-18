@@ -1,4 +1,2 @@
 #!/usr/bin/env node
-import { program } from "../src/getInfo.js";
-
-program();
+import { program } from "../src/program.js";

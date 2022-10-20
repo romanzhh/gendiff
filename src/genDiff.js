@@ -1,10 +1,9 @@
 import _ from 'lodash';
-import fs from 'fs';
-import path from 'path';
+import parseData from './parseData.js';
 
 export default (file1, file2) => {
-  const f1 = JSON.parse(fs.readFileSync(path.resolve(file1)));
-  const f2 = JSON.parse(fs.readFileSync(path.resolve(file2)));
+  const f1 = parseData(file1);
+  const f2 = parseData(file2);
   const keys1 = _.sortBy(Object.keys(f1));
   const keys2 = _.sortBy(Object.keys(f2));
   const allKeys = _.uniq(keys1.concat(keys2));

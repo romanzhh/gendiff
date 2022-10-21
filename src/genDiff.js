@@ -10,6 +10,7 @@ export default (file1, file2) => {
   const keys2 = _.sortBy(Object.keys(f2));
   const allKeys = _.uniq(keys1.concat(keys2));
   if (flatOrNot(f1, f2)) {
-      return flatOnly(allKeys, f1, f2);
+    return flatOnly(allKeys, f1, f2);
   }
+  return 'function is not ready';
 };

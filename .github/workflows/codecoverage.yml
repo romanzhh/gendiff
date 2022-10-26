@@ -37,7 +37,7 @@ jobs:
       - name: Test & publish code coverage
         # Publish code coverage on Code Climate
         # https://github.com/romanzhh/codeclimate-action
-        # uses: paambaati/codeclimate-action@v3
+        # uses: romanzhh/codeclimate-action@v3
         uses: romanzhh/codeclimate-action@v3.0.0
         # Add Code Climate secret key
         env:

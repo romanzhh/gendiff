@@ -1,4 +1,4 @@
-import genDiff from '../src/genDiff.js';
+import genDiff from '../index.js';
 
 test('compareJSON', () => {
   expect(genDiff(

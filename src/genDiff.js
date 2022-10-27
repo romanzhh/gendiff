@@ -1,16 +1,18 @@
-import _ from 'lodash';
-import parseData from './parseData.js';
-import flatOnly from './flatFilesDiff.js';
-import flatOrNot from './areFilesFlat.js';
+import { Command } from 'commander';
+import genDiff from '../index.js';
 
-export default (file1, file2) => {
-  const f1 = parseData(file1);
-  const f2 = parseData(file2);
-  const keys1 = _.sortBy(Object.keys(f1));
-  const keys2 = _.sortBy(Object.keys(f2));
-  const allKeys = _.uniq(keys1.concat(keys2));
-  if (flatOrNot(f1, f2)) {
-    return flatOnly(allKeys, f1, f2);
-  }
-  return 'function is not ready';
-};
+const program = new Command();
+
+program
+  .name('gendiff')
+  .arguments('<filepath1> <filepath2>')
+  .description('Compares two configuration files and shows a difference.')
+  .option('-V, --version', 'output the version number')
+  .option('-f, --format <type>', 'output format')
+  .action((filepath1, filepath2) => {
+    console.log(genDiff(filepath1, filepath2));
+  });
+
+program.parse();
+
+export default program;

@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-import '../src/program.js';
+import '../src/genDiff.js';

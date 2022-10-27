@@ -11,8 +11,10 @@ make install
 npm link
 ```
 
+<h1>Справка</h1>
+
 ```
-gendiff <filepath1> <filepath2>
+gendiff -h
 ```
 
 <h3>Сравнение JSON-файлов</h3>

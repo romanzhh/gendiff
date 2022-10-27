@@ -2,6 +2,7 @@ import _ from 'lodash';
 import parseData from './src/parseData.js';
 import flatOnly from './src/flatFilesDiff.js';
 import flatOrNot from './src/areFilesFlat.js';
+import notFlat from './src/notFlatFilesDiff.js';
 
 export default (file1, file2) => {
   const f1 = parseData(file1);
@@ -12,5 +13,5 @@ export default (file1, file2) => {
   if (flatOrNot(f1, f2)) {
     return flatOnly(allKeys, f1, f2);
   }
-  return 'function is not ready';
+  return notFlat(f1, f2);
 };

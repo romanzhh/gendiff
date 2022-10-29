@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import makeIndent from './formatters/makeIndent.js';
-import deepOutput from './formatters/stylish.js';
+import stylish from './formatters/stylish.js';
 import flat from './flatFilesDiff.js';
 
 const notFlatFilesDiff = (f1, f2) => {
@@ -11,10 +11,10 @@ const notFlatFilesDiff = (f1, f2) => {
       result += `    ${key}: ${makeIndent(flat(f1[key], f2[key]))}\n`;
     }
     if (Object.hasOwn(f1, key) && !Object.hasOwn(f2, key)) {
-      result += `  - ${key}: ${deepOutput(f1[key])}\n`;
+      result += `  - ${key}: ${stylish(f1[key])}\n`;
     }
     if (Object.hasOwn(f2, key) && !Object.hasOwn(f1, key)) {
-      result += `  + ${key}: ${deepOutput(f2[key])}\n`;
+      result += `  + ${key}: ${stylish(f2[key])}\n`;
     }
     return result;
   }, '{\n')}}`;

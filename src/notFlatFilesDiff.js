@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { deepOutput, makeIndent } from './stylish.js';
-import flat from './notFlatHelper.js';
+import flat from './flatFilesDiff.js';
 
 const notFlatFilesDiff = (f1, f2) => {
   const keys = _.uniq(_.sortBy(_.union(Object.keys(f1), Object.keys(f2))));

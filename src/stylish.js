@@ -11,7 +11,7 @@ export const makeIndent = (f) => {
 
 export const deepOutput = (file) => {
   const newFile = JSON.stringify(file, null, 4);
-  const unquoted = newFile.replace(/"([^"]+)":/g, '$1:');
+  const unquoted = newFile.replaceAll('"', '');
   const result = makeIndent(unquoted);
   return result.replaceAll(',', ' ');
 };

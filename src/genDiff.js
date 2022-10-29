@@ -12,9 +12,9 @@ program
   .action((filepath1, filepath2) => {
     const options = program.opts();
     if (options.format === 'plain') {
-      console.log('not ready!');
+      console.log(genDiff(filepath1, filepath2, 'plain'));
     } else if (options.format === 'stylish' || options.format === undefined) {
-      console.log(genDiff(filepath1, filepath2));
+      console.log(genDiff(filepath1, filepath2, 'stylish'));
     }
   });
 

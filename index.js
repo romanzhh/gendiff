@@ -1,6 +1,6 @@
 import parseData from './src/parseData.js';
-import flat from './src/flatFilesDiff.js';
 import flatOrNot from './src/areFilesFlat.js';
+import flat from './src/flatFilesDiff.js';
 import notFlat from './src/notFlatFilesDiff.js';
 
 export default (file1, file2) => {

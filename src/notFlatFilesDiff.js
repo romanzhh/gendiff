@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { deepOutput, makeIndent } from './stylish.js';
+import makeIndent from './formatters/makeIndent.js';
+import deepOutput from './formatters/stylish.js';
 import flat from './flatFilesDiff.js';
 
 const notFlatFilesDiff = (f1, f2) => {

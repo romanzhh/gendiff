@@ -2,7 +2,7 @@ import genDiff from '../index.js';
 
 const output = genDiff('__fixtures__/file3.json', '__fixtures__/file4.json', 'stylish');
 
-test('compare flat JSON', () => {
+test('compare flat JSON with stylish format', () => {
   expect(genDiff(
     '__fixtures__/file1.json',
     '__fixtures__/file2.json',
@@ -12,7 +12,7 @@ test('compare flat JSON', () => {
   );
 });
 
-test('compare not flat JSON', () => {
+test('compare not flat JSON with stylish format', () => {
   expect(genDiff(
     '__fixtures__/file3.json',
     '__fixtures__/file4.json',

@@ -14,6 +14,8 @@ const compare = (f1, f2) => `${_.sortBy(_.uniq(_.union(Object.keys(f1), Object.k
   }
   if (_.isObject(f2[key]) && !Object.hasOwn(f1, key)) {
     result += `  + ${key}: ${stylish(f2[key])}\n`;
+  } else if (_.isObject(f1[key]) && !Object.hasOwn(f2, key)) {
+    result += `  - ${key}: ${stylish(f1[key])}\n`;
   } else if (_.isObject(f1[key]) && !_.isObject(f2[key])) {
     result += `  - ${key}: ${stylish(f1[key])}\n`;
   } else if (_.isObject(f1[key]) && Object.hasOwn(f2, key)) {

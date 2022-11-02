@@ -1,6 +1,7 @@
 import parseData from './src/parseData.js';
 import diff from './src/diff.js';
 import plainDiff from './src/plainDiff.js';
+import jsonDiff from './src/jsonDiff.js';
 
 export default (file1, file2, format) => {
   const f1 = parseData(file1);
@@ -10,6 +11,8 @@ export default (file1, file2, format) => {
     output = diff(f1, f2);
   } else if (format === 'plain') {
     output = plainDiff(f1, f2);
+  } else if (format === 'json') {
+    output = jsonDiff(f1, f2);
   }
   return output;
 };

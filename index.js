@@ -14,6 +14,6 @@ export default (file1, file2, format) => {
     case 'json':
       return jsonDiff(f1, f2);
     default:
-      return null;
+      return diff(f1, f2);
   }
 };

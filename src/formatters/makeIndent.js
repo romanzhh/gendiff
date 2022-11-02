@@ -1,10 +1,9 @@
 export default (f) => {
   const file = f.split('\n');
   return file.map((str) => {
-    let string = str;
-    if (string !== file[0]) {
-      string = `    ${string}`;
+    if (str !== file[0]) {
+      return `    ${str}`;
     }
-    return string;
+    return str;
   }).join('\n');
 };

@@ -1,7 +1,6 @@
 export default (data) => {
-  let word = data;
-  if (typeof word === 'string') {
-    word = `'${data}'`;
+  if (typeof data === 'string') {
+    return `'${data}'`;
   }
-  return word;
+  return data;
 };

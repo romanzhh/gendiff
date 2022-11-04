@@ -4,7 +4,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/e90dff7c66271c82394f/maintainability)](https://codeclimate.com/github/romanzhh/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e90dff7c66271c82394f/test_coverage)](https://codeclimate.com/github/romanzhh/frontend-project-46/test_coverage)
 
-A package that compares two files.
+A package that compares two configuration files and shows a difference.
+
+Read this in other languages: English | [简体中文](./README-CN.md)
 
 ## Installation
 
@@ -30,8 +32,6 @@ Options:
 
 ## Examples
 
-That's an example of comparing flat files.
-
 ```yaml
 $ gendiff -f stylish filepath1 filepath2
 {
@@ -44,58 +44,13 @@ $ gendiff -f stylish filepath1 filepath2
 }
 ```
 
-[file1](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file1.json)
-[file2](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file2.json)
-
-Another comparison example, but only with non-flat files.
-
-```yaml
-$ gendiff -f stylish filepath1 filepath2
-{
-    common: {
-      + follow: false
-        setting1: Value 1
-      - setting2: 200
-      - setting3: true
-      + setting3: null
-      + setting4: blah blah
-      + setting5: {
-            key5: value5
-        }
-        setting6: {
-            doge: {
-              - wow:
-              + wow: so much
-            }
-            key: value
-          + ops: vops
-        }
-    }
-    group1: {
-      - baz: bas
-      + baz: bars
-        foo: bar
-      + nest: str
-      - nest: {
-            key: value
-        }
-    }
-  - group2: {
-        abc: 12345
-        deep: {
-            id: 45
-        }
-    }
-  + group3: {
-        deep: {
-            id: {
-                number: 45
-            }
-        }
-        fee: 100500
-    }
-}
+```js
+$ gendiff -f plain filepath1 filepath2
+Property 'follow' was removed
+Property 'proxy' was removed
+Property 'timeout' was updated. From 50 to 20
+Property 'verbose' was added with value: true
 ```
 
-[file1](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file3.json)
-[file2](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file4.json)
+[file1](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file1.json)
+[file2](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file2.json)

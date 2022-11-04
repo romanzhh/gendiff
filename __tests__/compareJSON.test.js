@@ -3,6 +3,15 @@ import genDiff from '../index.js';
 const output = genDiff('__fixtures__/file3.json', '__fixtures__/file4.json', 'stylish');
 const output2 = genDiff('__fixtures__/file3.json', '__fixtures__/file4.json', 'json');
 
+test('compare flat JSON with default format', () => {
+  expect(genDiff(
+    '__fixtures__/file1.json',
+    '__fixtures__/file2.json',
+  )).toBe(
+    '{\n  - follow: false\n    host: hexlet.io\n  - proxy: 123.234.53.22\n  - timeout: 50\n  + timeout: 20\n  + verbose: true\n}',
+  );
+});
+
 test('compare flat JSON with stylish format', () => {
   expect(genDiff(
     '__fixtures__/file1.json',

@@ -52,5 +52,5 @@ Property 'timeout' was updated. From 50 to 20
 Property 'verbose' was added with value: true
 ```
 
-[file1](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file1.json)
-[file2](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file2.json)
+[文件1](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file1.json)
+[文件2](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file2.json)

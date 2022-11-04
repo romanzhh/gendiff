@@ -4,6 +4,7 @@ env:
   node: true
 plugins:
   - jest
+  - fp
 extends:
   - 'airbnb-base'
   - 'plugin:jest/recommended' 
@@ -17,3 +18,4 @@ rules:
     - error
     - ignorePackages
     - js: always
+  fp/no-mutation: "error"

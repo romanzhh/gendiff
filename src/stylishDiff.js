@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable fp/no-mutation */
 import _ from 'lodash';
 import stylish from './formatters/stylish.js';
 import makeIndent from './formatters/makeIndent.js';
@@ -9,23 +9,25 @@ const compare = (file1, file2) => {
   const f1 = _.cloneDeep(file1);
   const f2 = _.cloneDeep(file2);
   const keys = getKeys(f1, f2);
-  return `${keys.reduce((acc, key) => {
+  const tree = `${keys.reduce((acc, key) => {
+    let result = acc;
     if ((f1[key] !== f2[key] && Object.hasOwn(f1, key)
     && (!_.isObject(f1[key]) || !_.isObject(f2[key])))) {
-      acc += `  - ${key}: ${stylish(f1[key])}\n`;
+      result += `  - ${key}: ${stylish(f1[key])}\n`;
     }
     if (f1[key] !== f2[key] && Object.hasOwn(f2, key)
     && (!_.isObject(f1[key]) || !_.isObject(f2[key]))) {
-      acc += `  + ${key}: ${stylish(f2[key])}\n`;
+      result += `  + ${key}: ${stylish(f2[key])}\n`;
     }
     if (f1[key] === f2[key]) {
-      acc += `    ${key}: ${f1[key]}\n`;
+      result += `    ${key}: ${f1[key]}\n`;
     }
     if (_.isObject(f1[key]) && _.isObject(f2[key])) {
-      acc += `    ${key}: ${makeIndent(compare(f1[key], f2[key]))}\n`;
+      result += `    ${key}: ${makeIndent(compare(f1[key], f2[key]))}\n`;
     }
-    return acc;
+    return result;
   }, '{\n')}}`;
+  return tree;
 };
 export default compare;
 

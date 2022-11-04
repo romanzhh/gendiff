@@ -4,11 +4,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/e90dff7c66271c82394f/maintainability)](https://codeclimate.com/github/romanzhh/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e90dff7c66271c82394f/test_coverage)](https://codeclimate.com/github/romanzhh/frontend-project-46/test_coverage)
 
-A package that compares two configuration files and shows a difference.
+比較兩個配置文件並顯示差異的包。
 
-Read this in other languages: English | [简体中文](./README-CN.md)
+使用其他语言阅读：[English](./README.md) | 简体中文
 
-## Installation
+## 安裝
 
 ```
 git clone git@github.com:romanzhh/frontend-project-46.git
@@ -16,7 +16,7 @@ make install
 npm link
 ```
 
-## Help
+## 幫助
 
 ```js
 $ gendiff -h
@@ -30,7 +30,7 @@ Options:
   -h, --help           display help for command
 ```
 
-## Examples
+## 例子
 
 ```yaml
 $ gendiff -f stylish filepath1 filepath2
@@ -52,5 +52,5 @@ Property 'timeout' was updated. From 50 to 20
 Property 'verbose' was added with value: true
 ```
 
-[file1](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file1.json)
-[file2](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file2.json)
+[文件1](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file1.json)
+[文件2](https://github.com/romanzhh/frontend-project-46/blob/main/__fixtures__/file2.json)

@@ -10,6 +10,7 @@ const compare = (file1, file2) => {
   const f2 = _.cloneDeep(file2);
   const keys = getKeys(f1, f2);
   const tree = `${keys.reduce((acc, key) => {
+    // eslint-disable-next-line fp/no-let
     let result = acc;
     if ((f1[key] !== f2[key] && Object.hasOwn(f1, key)
     && (!_.isObject(f1[key]) || !_.isObject(f2[key])))) {

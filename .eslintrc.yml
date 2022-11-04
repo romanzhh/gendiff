@@ -19,3 +19,4 @@ rules:
     - ignorePackages
     - js: always
   fp/no-mutation: "error"
+  fp/no-let: "error"

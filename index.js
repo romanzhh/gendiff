@@ -1,5 +1,5 @@
 import parseData from './src/parseData.js';
-import diff from './src/diff.js';
+import diff from './src/stylishDiff.js';
 import plainDiff from './src/plainDiff.js';
 import jsonDiff from './src/jsonDiff.js';
 

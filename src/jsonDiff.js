@@ -1,5 +1,4 @@
-import stylishDiff from './diff.js';
-// import { checkType } from './formatters/isString.js';
+import stylishDiff from './stylishDiff.js';
 
 const compare = (f1, f2) => {
   const diff = stylishDiff(f1, f2);

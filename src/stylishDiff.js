@@ -8,16 +8,13 @@ const getKeys = (f1, f2) => _.sortBy(_.uniq(_.union(_.keys(f1), _.keys(f2))));
 const compare = (f1, f2) => {
   const keys = getKeys(f1, f2);
   const tree = `${keys.reduce((acc, key) => {
-    const condition1 = f1[key] !== f2[key];
-    const condition2 = !_.isObject(f1[key]) || !_.isObject(f2[key]);
+    const condition = (f1[key] !== f2[key]) && (!_.isObject(f1[key]) || !_.isObject(f2[key]));
     // eslint-disable-next-line fp/no-let
     let result = acc;
-    if ((condition1 && Object.hasOwn(f1, key)
-    && (condition2))) {
+    if ((condition && Object.hasOwn(f1, key))) {
       result += `  - ${key}: ${stylish(f1[key])}\n`;
     }
-    if (condition1 && Object.hasOwn(f2, key)
-    && (condition2)) {
+    if (condition && Object.hasOwn(f2, key)) {
       result += `  + ${key}: ${stylish(f2[key])}\n`;
     }
     if (f1[key] === f2[key]) {

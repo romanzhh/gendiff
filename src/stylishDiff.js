@@ -5,19 +5,18 @@ import makeIndent from './formatters/makeIndent.js';
 
 const getKeys = (f1, f2) => _.sortBy(_.uniq(_.union(_.keys(f1), _.keys(f2))));
 
-const compare = (file1, file2) => {
-  const f1 = _.cloneDeep(file1);
-  const f2 = _.cloneDeep(file2);
+const compare = (f1, f2) => {
   const keys = getKeys(f1, f2);
   const tree = `${keys.reduce((acc, key) => {
+    const condition = !_.isObject(f1[key]) || !_.isObject(f2[key]);
     // eslint-disable-next-line fp/no-let
     let result = acc;
     if ((f1[key] !== f2[key] && Object.hasOwn(f1, key)
-    && (!_.isObject(f1[key]) || !_.isObject(f2[key])))) {
+    && (condition))) {
       result += `  - ${key}: ${stylish(f1[key])}\n`;
     }
     if (f1[key] !== f2[key] && Object.hasOwn(f2, key)
-    && (!_.isObject(f1[key]) || !_.isObject(f2[key]))) {
+    && (condition)) {
       result += `  + ${key}: ${stylish(f2[key])}\n`;
     }
     if (f1[key] === f2[key]) {

@@ -22,7 +22,7 @@ const compare = (node1, node2) => {
       if (_.isObject(f1[key]) && _.isObject(f2[key])) {
         return `${iter(f1[key], f2[key], fullPath)}`;
       }
-      return null;
+      throw new Error('unexpected key');
     }).join('\n');
   };
   return iter(node1, node2, '');

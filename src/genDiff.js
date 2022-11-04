@@ -7,7 +7,7 @@ program
   .name('gendiff')
   .arguments('<filepath1> <filepath2>')
   .description('Compares two configuration files and shows a difference.')
-  .option('-V, --version', 'output the version number')
+  .version('0.0.1', '-V, --version', 'output the version number')
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2) => {
     const options = program.opts();

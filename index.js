@@ -1,7 +1,7 @@
 import parseData from './src/parseData.js';
-import diff from './src/stylishDiff.js';
-import plainDiff from './src/plainDiff.js';
-import jsonDiff from './src/jsonDiff.js';
+import diff from './src/formatters/stylish.js';
+import plainDiff from './src/formatters/plain.js';
+import jsonDiff from './src/formatters/json.js';
 
 export default (file1, file2, format) => {
   const f1 = parseData(file1);
